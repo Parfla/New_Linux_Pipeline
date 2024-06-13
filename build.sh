@@ -1,2 +1,3 @@
-                sh 'echo "Building..."'
-                sh 'ls -al'
+                #!/bin/bash
+                echo "Building..."
+                ls -al
