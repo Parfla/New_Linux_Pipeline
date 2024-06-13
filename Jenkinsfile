@@ -3,23 +3,23 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Building..."'
-                sh 'ls -al'
+                 sh '''
+                bash build.sh
+                '''
             }
         }
         stage('Test') {
             steps {
                 sh '''
-                bash deploy.sh
+                bash test.sh
                 '''
             }
         }
         stage('Deploy') {
             steps {
-                sh 'cat ./deploy.sh'
-                sh 'echo "Deploying..."'
-                sh 'mv testfile.txt /tmp'
-                sh 'ls -l /tmp'
+                sh '''
+                bash deploy.sh
+                '''
             }
         }
     }
